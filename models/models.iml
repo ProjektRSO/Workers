@@ -5,6 +5,8 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <datasource-mapping>
+          <factory-entry name="models" />
+          <factory-entry name="nakupovalni-seznam-jpa" />
           <factory-entry name="workers-jpa" />
         </datasource-mapping>
         <naming-strategy-map />
