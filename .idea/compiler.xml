@@ -11,8 +11,5 @@
         <module name="services" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="entities" target="12" />
-    </bytecodeTargetLevel>
   </component>
 </project>

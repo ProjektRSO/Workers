@@ -1,0 +1,11 @@
+kumuluzee:
+  name: simple-jdbc-sample
+  version: 1.0.0
+  env:
+    name: dev
+  datasources:
+    - jndi-name: jdbc/workerDS
+      connection-url: jdbc:postgresql://localhost:5432/workers
+      username: postgres
+      password: postgres
+# docker run -d --name postgres-jdbc -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=workers -p 5432:5432 postgres:13

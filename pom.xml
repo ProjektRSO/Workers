@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>si.fri.rso2021</groupId>
     <artifactId>Workers</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
@@ -14,9 +14,14 @@
         <module>services</module>
     </modules>
 
+
     <properties>
         <maven.compiler.source>12</maven.compiler.source>
         <maven.compiler.target>12</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <kumuluzee.version>3.12.2</kumuluzee.version>
+        <kumuluzee-rest.version>1.5.1</kumuluzee-rest.version>
+        <postgresql.version>42.3.0</postgresql.version>
     </properties>
 
     <dependencyManagement>
@@ -29,30 +34,46 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>org.postgresql</groupId>
-                <artifactId>postgresql</artifactId>
-                <version>42.2.5</version>
-            </dependency>
-            <dependency>
-                <groupId>workers.entities</groupId>
-                <artifactId>entities</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-<!--            <dependency>-->
-<!--                <groupId>si.fri.projekt</groupId>-->
-<!--                <artifactId>storitve</artifactId>-->
-<!--                <version>${project.version}</version>-->
-<!--            </dependency>-->
-            <dependency>
                 <groupId>com.kumuluz.ee.rest</groupId>
                 <artifactId>kumuluzee-rest-core</artifactId>
                 <version>${kumuluzee-rest.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.kumuluz.ee.openapi</groupId>
-                <artifactId>kumuluzee-openapi</artifactId>
-                <version>${kumuluzee-openapi.version}</version>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>si.fri.rso2021</groupId>
+                <artifactId>api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>si.fri.rso2021</groupId>
+                <artifactId>models</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>si.fri.rso2021</groupId>
+                <artifactId>services</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>si.fri.rso.samples</groupId>-->
+<!--                <artifactId>image-catalog-models</artifactId>-->
+<!--                <version>${project.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>si.fri.rso.samples</groupId>-->
+<!--                <artifactId>image-catalog-services</artifactId>-->
+<!--                <version>${project.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>si.fri.rso.samples</groupId>-->
+<!--                <artifactId>image-catalog-lib</artifactId>-->
+<!--                <version>${project.version}</version>-->
+<!--            </dependency>-->
         </dependencies>
     </dependencyManagement>
 
