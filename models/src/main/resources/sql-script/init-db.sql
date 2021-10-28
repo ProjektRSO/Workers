@@ -1,0 +1,1 @@
+-- INSERT INTO artikel (naziv, status, kategorija, seznam_id, id) VALUES ('Brsticni ohrovt', 'Na voljo', 'Hrana', 100, 500);
