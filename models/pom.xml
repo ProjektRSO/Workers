@@ -11,10 +11,6 @@
 
     <artifactId>models</artifactId>
 
-    <properties>
-        <maven.compiler.source>12</maven.compiler.source>
-        <maven.compiler.target>12</maven.compiler.target>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -27,6 +23,11 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>javax.json.bind</groupId>-->
+<!--            <artifactId>javax.json.bind-api</artifactId>-->
+<!--            <version>1.0</version>-->
+<!--        </dependency>-->
     </dependencies>
 
 </project>

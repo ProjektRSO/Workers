@@ -1,11 +1,15 @@
 kumuluzee:
-  name: simple-jdbc-sample
+  name: worker-service
   version: 1.0.0
   env:
     name: dev
+  server:
+    base-url: http://localhost:8080
+    http:
+      port: 8080
   datasources:
     - jndi-name: jdbc/workerDS
       connection-url: jdbc:postgresql://localhost:5432/workers
       username: postgres
       password: postgres
-# docker run -d --name postgres-jdbc -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=workers -p 5432:5432 postgres:13
+# docker run -d --name worker-service -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=workers -p 5432:5432 postgres:13
