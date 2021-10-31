@@ -24,10 +24,10 @@
             <groupId>si.fri.rso2021</groupId>
             <artifactId>services</artifactId>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.kumuluz.ee</groupId>-->
-<!--            <artifactId>kumuluzee-jax-rs-jersey</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.kumuluz.ee</groupId>
+            <artifactId>kumuluzee-jax-rs-jersey</artifactId>
+        </dependency>
 <!--        <dependency>-->
 <!--            <groupId>com.kumuluz.ee</groupId>-->
 <!--            <artifactId>kumuluzee-json-p-jsonp</artifactId>-->

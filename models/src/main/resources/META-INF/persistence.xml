@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
 <persistence-unit name="workers-jpa" transaction-type="JTA">
-    <jta-data-source>jdbc/workersDS</jta-data-source>
+    <jta-data-source>jdbc/workers-jpa</jta-data-source>
 
     <class>si.fri.rso2021.workers.models.entities.WorkerEntity</class>
+    <class>si.fri.rso2021.workers.models.converters.WorkerConverter</class>
 
     <properties>
         <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>

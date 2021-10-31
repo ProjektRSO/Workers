@@ -3,10 +3,11 @@ package si.fri.rso2021.workers.models.entities;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity(name = "worker")
+@Entity
+@Table(name = "workers")
 @NamedQueries(value =
         {
-                @NamedQuery(name = "Worker.getAll", query = "SELECT w FROM worker w")
+                @NamedQuery(name = "WorkerEntity.getAll", query = "SELECT w FROM WorkerEntity w")
         })
 
 public class WorkerEntity implements java.io.Serializable {
@@ -15,12 +16,13 @@ public class WorkerEntity implements java.io.Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
-    @Column(name = "first_name")
+    @Column(name = "firstName")
     private String firstName;
 
-    @Column(name = "last_name")
+    @Column(name = "lastName")
     private String lastName;
 
+    @Column(name = "address")
     private String address;
 
     @Column(name = "date_of_birth")

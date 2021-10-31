@@ -8,7 +8,7 @@ kumuluzee:
     http:
       port: 8080
   datasources:
-    - jndi-name: jdbc/workerDS
+    - jndi-name: jdbc/workers-jpa
       connection-url: jdbc:postgresql://localhost:5432/workers
       username: postgres
       password: postgres

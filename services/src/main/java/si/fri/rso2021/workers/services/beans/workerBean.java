@@ -4,6 +4,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 import javax.ws.rs.NotFoundException;
@@ -27,14 +28,14 @@ public class workerBean {
 
     private Logger log = Logger.getLogger(workerBean.class.getName());
 
-    //@PersistenceContext(unitName = "workers-jpa")
-    @Inject
+    @PersistenceContext(unitName = "workers-jpa")
+    //@Inject
     private EntityManager em;
 
 
     public List<Worker> getWorkers() {
         TypedQuery<WorkerEntity> query = em.createNamedQuery(
-                "Worker.getAll", WorkerEntity.class);
+                "WorkerEntity.getAll", WorkerEntity.class);
         List<WorkerEntity> resultList =  query.getResultList();
         return resultList.stream().map(WorkerConverter::toDto).collect(Collectors.toList());
     }

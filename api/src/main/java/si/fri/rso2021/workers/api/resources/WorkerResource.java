@@ -1,6 +1,7 @@
 package si.fri.rso2021.workers.api.resources;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -19,6 +20,7 @@ import java.util.logging.Logger;
 
 import si.fri.rso2021.workers.models.objects.Worker;
 import si.fri.rso2021.workers.services.beans.workerBean;
+
 
 @ApplicationScoped
 @Path("/workers")
