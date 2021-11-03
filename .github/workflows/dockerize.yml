@@ -36,4 +36,4 @@ jobs:
       with:
         file: ./Dockerfile
         push: true
-        tags: rso2021.workers:${{ steps.time.outputs.time }}
+        tags: dm4018/rso2021.workers:${{ steps.time.outputs.time }}

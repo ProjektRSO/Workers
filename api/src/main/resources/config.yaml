@@ -19,5 +19,7 @@ kumuluzee:
 # docker network create rso2021
 # docker run -d --name worker-database -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=workers -p 5432:5432 --network rso2021 postgres:13
 
-#  okoljske spremenljivke: v run ukazu z -e IME=vrednost
-# KUMULUZEE_DATASOURCES0_CONNECTIONURL=
+# okoljske spremenljivke: v run ukazu z -e IME=vrednost
+# KUMULUZEE_DATASOURCES0_CONNECTIONURL -> sestavljeno iz nivojev te yaml datoteke, 0 tam kjer lahko več
+
+# consul agent -dev, na 8500 portu
