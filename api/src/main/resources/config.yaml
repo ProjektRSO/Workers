@@ -13,3 +13,5 @@ kumuluzee:
       username: postgres
       password: postgres
 # docker run -d --name worker-service -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=workers -p 5432:5432 postgres:13
+# kumuluzee.env.name če bi bilo znotraj
+# če datoteka: velike črke in podčrtaj namesto pik KUMULUZEE_ENV_NAME
