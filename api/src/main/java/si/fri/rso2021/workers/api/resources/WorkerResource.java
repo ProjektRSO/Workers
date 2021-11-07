@@ -42,4 +42,47 @@ public class WorkerResource {
 
         return Response.status(Response.Status.OK).entity(workers).build();
     }
+
+    @GET
+    @Path("/{id}")
+    public Response getWorkerData_byId(@PathParam("id") Integer id) {
+        Worker w = workerbean.getWorker_byId(id);
+        if (w == null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        return Response.status(Response.Status.OK).entity(w).build();
+    }
+
+    @POST
+    public Response createWorker(Worker w) {
+        if (w.getFirstName() == null || w.getAddress() == null) {
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
+        else {
+            w = workerbean.createWorker(w);
+        }
+        return Response.status(Response.Status.CONFLICT).entity(w).build();
+    }
+
+    @PUT
+    @Path("/{id}")
+    public Response putWorker(@PathParam("id") Integer id, Worker w){
+        w = workerbean.putWorker(id, w);
+        if (w == null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        return Response.status(Response.Status.NOT_MODIFIED).build();
+    }
+
+    @DELETE
+    @Path("{id}")
+    public Response deleteWorker(@PathParam("id") Integer id){
+        boolean deleted = workerbean.deleteWorker(id);
+        if (deleted) {
+            return Response.status(Response.Status.NO_CONTENT).build();
+        }
+        else {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+    }
 }

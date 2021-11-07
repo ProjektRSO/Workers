@@ -10,6 +10,8 @@
 --                          date_of_birth VARCHAR ( 255 ) UNIQUE NOT NULL,
 --                          firstName VARCHAR ( 50 ) UNIQUE NOT NULL
 -- );
-INSERT INTO workers (firstName, lastName, address, date_of_birth, id) VALUES ('Brsticni', 'ohrovt', 'Na voljo', '10.10.1985', 1);
+INSERT INTO workers (id, firstName, lastName, address, hourlyRate, monday, tuesday, wednesday, thursday, friday, saturday, sunday) VALUES (1, 'Mojster', 'Miha', 'Sanjska 1, 1000 Ljubljana', '5.00', '8.00-17.00', '8.00-17.00', '8.00-17.00', '8.00-17.00', '8.00-17.00', '8.00-17.00', 'null');
+INSERT INTO workers (id, firstName, lastName, address, hourlyRate, monday, tuesday, wednesday, thursday, friday, saturday, sunday) VALUES (2, 'Čebelica', 'Maja', 'Lepa 1, 2000 Maribor', '5.00', '8.00-17.00', '8.00-17.00', '8.00-17.00', 'null', '8.00-17.00', '8.00-17.00', 'null');
+
 --
 -- SELECT * FROM workers

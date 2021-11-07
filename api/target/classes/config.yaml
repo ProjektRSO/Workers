@@ -12,6 +12,9 @@ kumuluzee:
       connection-url: jdbc:postgresql://localhost:5432/workers
       username: postgres
       password: postgres
+  config:
+    consul:
+      agent: http://localhost:8500
 rest-properties:
   maintenance-mode: false
 # docker run -d --name rso-workerdb -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=workers -p 5432:5432 postgres:13

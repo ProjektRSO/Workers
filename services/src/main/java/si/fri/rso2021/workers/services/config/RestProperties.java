@@ -5,7 +5,7 @@ import com.kumuluz.ee.configuration.cdi.ConfigValue;
 import javax.enterprise.context.ApplicationScoped;
 
 
-// environments/dev/services/worker-service/1.0.0/config/rest-properties/maintenance-mode
+// consul kv put environments/dev/services/worker-service/1.0.0/config/rest-properties/maintenance-mode false or true
 @ConfigBundle("rest-properties")
 @ApplicationScoped
 public class RestProperties {
