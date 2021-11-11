@@ -23,6 +23,7 @@ rest-properties:
 
 # docker network create rso2021
 # docker run -d --name rso-workerdb -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=workers -p 5432:5432 --network rso2021 postgres:13
+# docker -p HOST:CONTAINER
 
 # okoljske spremenljivke: v run ukazu z -e IME=vrednost
 # jdbc:postgresql://worker-database:5432/workers
