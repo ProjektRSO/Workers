@@ -43,6 +43,16 @@
             <version>${project.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.kumuluz.ee.metrics</groupId>
+            <artifactId>kumuluzee-metrics-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.microprofile.metrics</groupId>
+            <artifactId>microprofile-metrics-api</artifactId>
+            <version>2.3.2</version>
+        </dependency>
+
 
 <!--        <dependency>-->
 <!--            <groupId>org.glassfish.hk2.external</groupId>-->

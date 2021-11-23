@@ -9,20 +9,31 @@ kumuluzee:
       port: 8080
   datasources:
     - jndi-name: jdbc/workers-jpa
-      connection-url: jdbc:postgresql://localhost:5432/workers
-      username: postgres
-      password: postgres
+      connection-url: jdbc:postgresql://fanny.db.elephantsql.com:5432/nnzrvsca
+      username: nnzrvsca
+      password: MNfRANGZRqoijwhObpLs6AJd-vqvo36j
   config:
     consul:
       agent: http://localhost:8500
+  health:
+    checks:
+      data-source-health-check:
+        type: liveness
+        jndi-name: jdbc/workers-jpa
+    metrics:
+      web-instrumentation:
+        - name: images-endpoint
+          url-pattern: /v1/workers/*
 rest-properties:
   maintenance-mode: false
+  broken: false
 # docker run -d --name rso-workerdb -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=workers -p 5432:5432 postgres:13
 # kumuluzee.env.name če bi bilo znotraj
 # če datoteka: velike črke in podčrtaj namesto pik KUMULUZEE_ENV_NAME
 
 # docker network create rso2021
 # docker run -d --name rso-workerdb -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=workers -p 5432:5432 --network rso2021 postgres:13
+# docker -p HOST:CONTAINER
 
 # okoljske spremenljivke: v run ukazu z -e IME=vrednost
 # jdbc:postgresql://worker-database:5432/workers

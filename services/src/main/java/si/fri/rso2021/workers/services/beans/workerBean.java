@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
+import org.eclipse.microprofile.metrics.annotation.Timed;
 
 import com.kumuluz.ee.rest.beans.QueryParameters;
 import com.kumuluz.ee.rest.utils.JPAUtils;
@@ -33,6 +34,7 @@ public class workerBean {
     private EntityManager em;
 
 
+    @Timed
     public List<Worker> getWorkers() {
         TypedQuery<WorkerEntity> query = em.createNamedQuery(
                 "WorkerEntity.getAll", WorkerEntity.class);
