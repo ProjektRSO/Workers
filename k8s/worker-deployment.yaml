@@ -13,7 +13,7 @@ spec:
         app: workers
     spec:
       containers:
-        - image: dm4018/rso2021.workers:2021-11-03-23-53-13
+        - image: dm4018/rso2021.workers:2021-12-18-18-32-02
           name: workers
           env:
             - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
@@ -28,18 +28,18 @@ spec:
             - containerPort: 8080
               name: server
               protocol: TCP
-        livenessProbe:
-          httpGet:
-            path: /health/live
-            port: server
-          initialDelaySeconds: 20
-          periodSeconds: 30
+          livenessProbe:
+            httpGet:
+              path: /health/live
+              port: server
+            initialDelaySeconds: 20
+            periodSeconds: 3
           readinessProbe:
             httpGet:
               path: /health/ready
               port: server
             initialDelaySeconds: 20
-            periodSeconds: 30
+            periodSeconds: 3
 ---
 
 apiVersion: v1

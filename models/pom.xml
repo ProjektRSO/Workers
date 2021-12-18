@@ -17,17 +17,10 @@
             <groupId>com.kumuluz.ee</groupId>
             <artifactId>kumuluzee-jpa-eclipselink</artifactId>
         </dependency>
-
-
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>javax.json.bind</groupId>-->
-<!--            <artifactId>javax.json.bind-api</artifactId>-->
-<!--            <version>1.0</version>-->
-<!--        </dependency>-->
     </dependencies>
 
 </project>
