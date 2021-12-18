@@ -9,12 +9,12 @@ kumuluzee:
       port: 8080
   datasources:
     - jndi-name: jdbc/workers-jpa
-      connection-url: jdbc:postgresql://fanny.db.elephantsql.com:5432/nnzrvsca
-      username: nnzrvsca
-      password: MNfRANGZRqoijwhObpLs6AJd-vqvo36j
+      connection-url: jdbc:postgresql://castor.db.elephantsql.com:5432/njdsvsme
+      username: njdsvsme
+      password: mBK7in5SGvGyZIZ_EmCrsY4uLXKTiraP
   config:
     consul:
-      agent: http://localhost:8500
+      agent: http://104.45.176.251:8500
   health:
     checks:
       data-source-health-check:
@@ -22,7 +22,7 @@ kumuluzee:
         jndi-name: jdbc/workers-jpa
     metrics:
       web-instrumentation:
-        - name: images-endpoint
+        - name: workers-endpoint
           url-pattern: /v1/workers/*
 rest-properties:
   maintenance-mode: false

@@ -17,14 +17,13 @@ spec:
           name: workers
           env:
             - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
-              value: jdbc:postgres://nnzrvsca:MNfRANGZRqoijwhObpLs6AJd-vqvo36j@fanny.db.elephantsql.com/nnzrvsca
+              value: jdbc:postgresql://castor.db.elephantsql.com:5432/njdsvsme
             - name: KUMULUZEE_DATASOURCES0_USERNAME
-              value: nnzrvsca
+              value: njdsvsme
             - name: KUMULUZEE_DATASOURCES0_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: pg-pass
-                  key: KUMULUZEE_DATASOURCES0_PASSWORD
+              value: mBK7in5SGvGyZIZ_EmCrsY4uLXKTiraP
+            - name: KUMULUZEE_CONFIG_CONSUL_AGENT
+              value: http://104.45.176.251:8500
           ports:
             - containerPort: 8080
               name: server
@@ -34,13 +33,13 @@ spec:
             path: /health/live
             port: server
           initialDelaySeconds: 20
-          periodSeconds: 3
+          periodSeconds: 30
           readinessProbe:
             httpGet:
               path: /health/ready
               port: server
             initialDelaySeconds: 20
-            periodSeconds: 3
+            periodSeconds: 30
 ---
 
 apiVersion: v1
