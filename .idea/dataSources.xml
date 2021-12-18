@@ -8,12 +8,5 @@
       <jdbc-url>jdbc:postgresql://localhost:5432/workers</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="nnzrvsca@fanny.db.elephantsql.com" uuid="8ef6aef1-35e7-44de-890c-760bb06f4752">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://fanny.db.elephantsql.com:5432/nnzrvsca</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
   </component>
 </project>
