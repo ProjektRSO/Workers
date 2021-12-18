@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import com.kumuluz.ee.cors.annotations.CrossOrigin;
+import com.kumuluz.ee.logs.cdi.Log;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.enums.SchemaType;
 import org.eclipse.microprofile.openapi.annotations.headers.Header;
@@ -29,7 +30,7 @@ import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 import si.fri.rso2021.workers.models.objects.Worker;
 import si.fri.rso2021.workers.services.beans.workerBean;
 
-
+@Log
 @ApplicationScoped
 @Path("/workers")
 @Produces(MediaType.APPLICATION_JSON)
