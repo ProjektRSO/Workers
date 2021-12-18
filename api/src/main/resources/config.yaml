@@ -14,7 +14,7 @@ kumuluzee:
       password: mBK7in5SGvGyZIZ_EmCrsY4uLXKTiraP
   config:
     consul:
-      agent: http://104.45.176.251:8500
+      agent: http://52.151.239.184:8500
   health:
     checks:
       data-source-health-check:
@@ -24,6 +24,11 @@ kumuluzee:
       web-instrumentation:
         - name: workers-endpoint
           url-pattern: /v1/workers/*
+  rest-client:
+    registrations:
+      - class: workers-api
+        url: http://localhost:8080/v1/workers
+        read-timeout: 5000
 rest-properties:
   maintenance-mode: false
   broken: false
