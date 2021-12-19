@@ -14,7 +14,7 @@ kumuluzee:
       password: mBK7in5SGvGyZIZ_EmCrsY4uLXKTiraP
   config:
     consul:
-      agent: http://localhost:8500/
+      agent: http://52.151.239.184:8500/
   health:
     checks:
       data-source-health-check:
