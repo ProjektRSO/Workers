@@ -9,12 +9,12 @@ kumuluzee:
       port: 8080
   datasources:
     - jndi-name: jdbc/workers-jpa
-      connection-url: jdbc:postgresql://castor.db.elephantsql.com:5432/njdsvsme
-      username: njdsvsme
+      connection-url: jdbc:postgresql://workersdb.postgres.database.azure.com:5432/postgres
+      username: prpo_user@workersdb
       password: mBK7in5SGvGyZIZ_EmCrsY4uLXKTiraP
   config:
     consul:
-      agent: http://52.151.239.184:8500/
+      agent: http://localhost:8500/
   health:
     checks:
       data-source-health-check:
@@ -24,6 +24,29 @@ kumuluzee:
       web-instrumentation:
         - name: workers-endpoint
           url-pattern: /v1/workers/*
+      servlet:
+        enabled: true
+        mapping: /metrics
+  logs:
+    config-file: '<?xml version="1.0" encoding="UTF-8"?>
+                              <Configuration name="comments">
+                                  <Appenders>
+                                      <Console name="console" target="SYSTEM_OUT">
+                                          <PatternLayout pattern="%d %p %marker %m %X %ex %n"/>
+                                      </Console>
+                                      <Socket name="logstash" host="026058c5-b9db-4a9e-90b5-b42447e61d10-ls.logit.io"
+                                      port="12345" protocol="udp">
+                                          <JSONLayout complete="false" compact="true" eventEol="true" charset="UTF-8" properties="true"/>
+                                      </Socket>
+                                  </Appenders>
+                                  <Loggers>
+                                      <!-- Default logger -->
+                                      <Root level="all">
+                                          <AppenderRef ref="console" level="info" />
+                                          <AppenderRef ref="logstash" level="trace" />
+                                      </Root>
+                                  </Loggers>
+                              </Configuration>'
   rest-client:
     registrations:
       - class: workers-api

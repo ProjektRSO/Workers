@@ -9,10 +9,15 @@ import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.core.UriInfo;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
+
+import org.eclipse.microprofile.faulttolerance.CircuitBreaker;
+import org.eclipse.microprofile.faulttolerance.Fallback;
+import org.eclipse.microprofile.faulttolerance.Timeout;
 import org.eclipse.microprofile.metrics.annotation.Timed;
 
 import com.kumuluz.ee.rest.beans.QueryParameters;
@@ -22,10 +27,16 @@ import si.fri.rso2021.workers.models.entities.WorkerEntity;
 import si.fri.rso2021.workers.models.objects.Worker;
 import si.fri.rso2021.workers.models.converters.WorkerConverter;
 
+import org.eclipse.microprofile.health.Readiness;
+import org.eclipse.microprofile.health.Liveness;
+import org.eclipse.microprofile.health.HealthCheck;
+import org.eclipse.microprofile.health.HealthCheckResponse;
 
 
 @RequestScoped
 public class workerBean {
+
+
 
     private Logger log = Logger.getLogger(workerBean.class.getName());
 
@@ -34,7 +45,7 @@ public class workerBean {
     private EntityManager em;
 
 
-    @Timed
+    @Timed(name="get all workers")
     public List<Worker> getWorkers() {
         TypedQuery<WorkerEntity> query = em.createNamedQuery(
                 "WorkerEntity.getAll", WorkerEntity.class);
@@ -42,6 +53,7 @@ public class workerBean {
         return resultList.stream().map(WorkerConverter::toDto).collect(Collectors.toList());
     }
 
+    @Timeout(value = 2, unit = ChronoUnit.SECONDS)
     public Worker getWorker_byId(Integer id) {
         WorkerEntity workerEntity = em.find(WorkerEntity.class, id);
         if (workerEntity == null) {

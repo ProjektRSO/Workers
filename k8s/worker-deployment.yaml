@@ -13,7 +13,7 @@ spec:
         app: workers
     spec:
       containers:
-        - image: dm4018/rso2021.workers:2021-12-18-18-32-02
+        - image: dm4018/rso2021.workers:2021-12-19-00-08-08
           name: workers
           env:
             - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
@@ -23,7 +23,7 @@ spec:
             - name: KUMULUZEE_DATASOURCES0_PASSWORD
               value: mBK7in5SGvGyZIZ_EmCrsY4uLXKTiraP
             - name: KUMULUZEE_CONFIG_CONSUL_AGENT
-              value: http://104.45.176.251:8500
+              value: http://52.151.239.184:8500/
           ports:
             - containerPort: 8080
               name: server
