@@ -28,91 +28,34 @@ public class WorkerEntity implements java.io.Serializable {
     private float hourlyRate;
 
     @Column(name = "monday")
-    private String monday;
+    private boolean monday;
 
     @Column(name = "tuesday")
-    private String tuesday;
+    private boolean tuesday;
 
     @Column(name = "wednesday")
-    private String wednesday;
+    private boolean wednesday;
 
     @Column(name = "thursday")
-    private String thursday;
+    private boolean thursday;
 
     @Column(name = "friday")
-    private String friday;
+    private boolean friday;
 
     @Column(name = "saturday")
-    private String saturday;
+    private boolean saturday;
 
     @Column(name = "sunday")
-    private String sunday;
+    private boolean sunday;
+
+    @Column(name="IBAN")
+    private String IBAN;
 
     // getter and setter methods
 
 
-    public String getSunday() {
-        return sunday;
-    }
-
-    public String getSaturday() {
-        return saturday;
-    }
-
-    public String getFriday() {
-        return friday;
-    }
-
-    public String getThursday() {
-        return thursday;
-    }
-
-    public String getWednesday() {
-        return wednesday;
-    }
-
-    public String getTuesday() {
-        return tuesday;
-    }
-
-    public String getMonday() {
-        return monday;
-    }
-
-    public float getHourlyRate() {
-        return hourlyRate;
-    }
-
-    public void setSunday(String sunday) {
-        this.sunday = sunday;
-    }
-
-    public void setSaturday(String saturday) {
-        this.saturday = saturday;
-    }
-
-    public void setFriday(String friday) {
-        this.friday = friday;
-    }
-
-    public void setThursday(String thursday) {
-        this.thursday = thursday;
-    }
-
-    public void setWednesday(String wednesday) {
-        this.wednesday = wednesday;
-    }
-
     public void setHourlyRate(float hourlyRate) {
         this.hourlyRate = hourlyRate;
-    }
-
-    public void setMonday(String monday) {
-        this.monday = monday;
-    }
-
-    public void setTuesday(String tuesday) {
-        this.tuesday = tuesday;
     }
 
     public void setAddress(String address) {
@@ -145,6 +88,74 @@ public class WorkerEntity implements java.io.Serializable {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public float getHourlyRate() {
+        return hourlyRate;
+    }
+
+    public boolean isMonday() {
+        return monday;
+    }
+
+    public void setMonday(boolean monday) {
+        this.monday = monday;
+    }
+
+    public boolean isTuesday() {
+        return tuesday;
+    }
+
+    public void setTuesday(boolean tuesday) {
+        this.tuesday = tuesday;
+    }
+
+    public boolean isWednesday() {
+        return wednesday;
+    }
+
+    public void setWednesday(boolean wednesday) {
+        this.wednesday = wednesday;
+    }
+
+    public boolean isThursday() {
+        return thursday;
+    }
+
+    public void setThursday(boolean thursday) {
+        this.thursday = thursday;
+    }
+
+    public boolean isFriday() {
+        return friday;
+    }
+
+    public void setFriday(boolean friday) {
+        this.friday = friday;
+    }
+
+    public boolean isSaturday() {
+        return saturday;
+    }
+
+    public void setSaturday(boolean saturday) {
+        this.saturday = saturday;
+    }
+
+    public boolean isSunday() {
+        return sunday;
+    }
+
+    public void setSunday(boolean sunday) {
+        this.sunday = sunday;
+    }
+
+    public String getIBAN() {
+        return IBAN;
+    }
+
+    public void setIBAN(String IBAN) {
+        this.IBAN = IBAN;
     }
 }
 

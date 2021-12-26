@@ -20,6 +20,7 @@ import java.util.logging.Logger;
 
 import com.kumuluz.ee.cors.annotations.CrossOrigin;
 import com.kumuluz.ee.logs.cdi.Log;
+import com.kumuluz.ee.logs.cdi.LogParams;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.enums.SchemaType;
 import org.eclipse.microprofile.openapi.annotations.headers.Header;
@@ -51,6 +52,7 @@ public class WorkerResource {
                     description = "List of worker data",
                     content = @Content(schema = @Schema(implementation = Worker.class, type = SchemaType.ARRAY))
             )})
+    @Log
     @GET
     public Response getWorkerData() {
 
