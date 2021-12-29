@@ -25,7 +25,7 @@ spec:
             - name: KUMULUZEE_CONFIG_CONSUL_AGENT
               value: http://52.151.239.184:8500/
             - name: KUMULUZEE_DISCOVERY_CONSUL_AGENT
-              value: http://52.151.239.184:8500/
+              value: http://20.88.176.61:8500/
           ports:
             - containerPort: 8080
               name: server
@@ -49,10 +49,8 @@ kind: Service
 metadata:
   name: workers
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - port: 8080
-      protocol: TCP
-      targetPort: server
   selector:
     app: workers
